@@ -1,11 +1,10 @@
-10
-2 Danish
-4 Khushi
-1 Dishant
-6 Jayvardhan
-4 Sneha
-7 Janvi
-8 Krushnakant
-9 Khushie
-12 Abhishek
-10 Rushikesh
+101 Danish Manager 85000
+102 Khushi Developer 65000
+103 Dishant Analyst 55000
+104 Jayvardhan Developer 70000
+105 Sneha Designer 60000
+106 Janvi Manager 90000
+107 Krushnakant Analyst 58000
+108 Khushie Developer 68000
+109 Abhishek Manager 95000
+110 Rushikesh Designer 62000
