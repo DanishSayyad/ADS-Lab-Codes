@@ -49,13 +49,32 @@ class Graph {
 				cout << "Degree of " << i << " : " << temp << endl;
 			}
 		}
+		
+		void showAdjacency() {
+			for(int i = 0; i < v; i++) {
+				cout << i << " --> ";
+				for(int j = 0; j < v; j++) {
+					if(arr[i][j]) cout << j << ",";
+				}
+				cout << "\b \n";
+			}
+		}
 };
 
 int main() {
 	Graph g1("graph1.txt");
 	g1.display();
-	cout << "No. of edges: " << g1.countEdges() << endl;
+	cout << "\nNo. of edges: " << g1.countEdges() << endl;
 	g1.showDegree();
+	cout << "\nAdjacency of the graph:\n";
+	g1.showAdjacency();
 	return 0;
 }
+
+
+
+
+
+
+
 
