@@ -8,17 +8,31 @@ class Graph {
 		int v, **arr;
 		
 	public:
-		// Method 1: Adjacency Matrix Reading
 		Graph(string fname) {
 			ifstream f1(fname, ios::in);
 			f1 >> v;
 			arr = new int*[v];
 			if(!arr) return;
 			
-			for(int i = 0; i < v; i++) {
+			// Method 1: Adjacency Matrix Reading
+			/*for(int i = 0; i < v; i++) {
 				arr[i] = new int[v];
 				if(!arr[i]) return;
 				for(int j = 0; j < v; j++) f1 >> arr[i][j];
+			}*/
+			
+			// Mathod 2: Vertex Pair Reading
+			for(int i = 0; i < v; i++) {
+				arr[i] = new int[v];
+				if(!arr[i]) return;
+				for(int j = 0; j < v; j++) arr[i][j] = 0;
+			}
+			for(int k = 0; k < v; k++) {
+				int i, j;
+				f1 >> i;
+				f1 >> j;
+				arr[i][j] = 1;
+				arr[j][i] = 1;
 			}
 		}
 		
@@ -62,7 +76,7 @@ class Graph {
 };
 
 int main() {
-	Graph g1("graph1.txt");
+	Graph g1("graph2.txt");
 	g1.display();
 	cout << "\nNo. of edges: " << g1.countEdges() << endl;
 	g1.showDegree();
