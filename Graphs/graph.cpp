@@ -39,12 +39,23 @@ class Graph {
 					if(arr[i][j]) x++;
 			return x;
 		}
+		
+		void showDegree() {
+			int temp;
+			for(int i = 0; i < v; i++) {
+				temp = 0;
+				for(int j = 0; j < v; j++)
+					if(arr[i][j]) temp++;
+				cout << "Degree of " << i << " : " << temp << endl;
+			}
+		}
 };
 
 int main() {
 	Graph g1("graph1.txt");
 	g1.display();
 	cout << "No. of edges: " << g1.countEdges() << endl;
+	g1.showDegree();
 	return 0;
 }
 
