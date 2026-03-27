@@ -8,6 +8,7 @@ class Graph {
 		int v, **arr;
 		
 	public:
+		// Method 1: Adjacency Matrix Reading
 		Graph(string fname) {
 			ifstream f1(fname, ios::in);
 			f1 >> v;
@@ -30,11 +31,20 @@ class Graph {
 				cout << endl;
 			}
 		}
+		
+		int countEdges() {
+			int x = 0;
+			for(int i = 0; i < v; i++)
+				for(int j = 0; j < i + 1; j++)
+					if(arr[i][j]) x++;
+			return x;
+		}
 };
 
 int main() {
 	Graph g1("graph1.txt");
 	g1.display();
+	cout << "No. of edges: " << g1.countEdges() << endl;
 	return 0;
 }
 
